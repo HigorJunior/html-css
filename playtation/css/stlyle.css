@@ -1,64 +1,114 @@
+
+/* CONFIGURAÇÃO GERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 img {
-    width: 100px;
+    max-width: 100%;
     height: auto;
-    max-width: 300px;
+    display: block;
 }
 
-.banner {
- 
-    background-size:cover;
-    height: 100px;
+/* CABEÇALHO */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: #000;
+    padding: 15px 25px;
+}
+
+header h1 {
+    color: white;
+    white-space: nowrap;
+    font-size: 20px;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+header h1 span {
+    color: #FFD700;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.ativo {
+    color: #FFD700;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 4px;
+}
+
+/* BANNER */
+
+.area-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-image: url("../img/ps5 2m.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     width: 100%;
+    min-height: 350px;
+    padding: 40px;
+    gap: 15px;
 }
 
-.texto-banner{
- font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 48px;
+.texto-banner {
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: clamp(28px, 4vw, 48px);
     font-weight: 300;
     color: #fff;
     text-align: left;
     margin: 0;
-    line-height: 1.15;
+    line-height: 1;
     max-width: 600px;
-    white-space: normal;
     width: 100%;
     letter-spacing: -1px;
-    line-height: 0.9;
-   
-   
-   
 }
 
-.area-banner{
-  
-      position: relative;
-    display: flex;
-    background-image: url(../img/ps5\ 2m.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    justify-content: baseline;
-    padding: 40px;
-    min-height: 350px;
-    box-sizing: border-box;
-    gap: 15px;
-    text-align: left;
-    align-items: flex-start;
-    
-    
-    
-}
-.destaque-amarelo{
+.destaque-amarelo {
     color: #ffea00;
 }
 
 .descricao-banner {
     color: white;
-    font-size: 18px;
+    font-size: clamp(14px, 1.5vw, 18px);
     max-width: 500px;
     text-align: left;
     margin: 0;
+    line-height: 1.5;
 }
 
 .botao-banner {
@@ -71,139 +121,321 @@ img {
     font-weight: bold;
 }
 
-    header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        background-color: #000;
-        padding: 15px 5px;
+/* TÍTULOS */
+
+.titulo-secao {
+    color: #fff;
+    font-size: 28px;
+    margin: 25px 20px;
+}
+
+.titulo-secao span,
+.secao-jogos h2 span {
+    color: #FFD700;
+}
+
+/* PRODUTOS */
+
+.secao-produtos {
+    padding: 20px;
+}
+
+.produtos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.produto {
+    background-color: #151515;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+}
+
+.produto h3 {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.produto .preco {
+    color: #FFD700;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 0 8px;
+}
+
+.produto .comprar {
+    margin-top: auto;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SEÇÃO DE JOGOS */
+
+.secao-jogos {
+    padding: 30px 20px;
+}
+
+.secao-jogos h2 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.secao-jogos h3 {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.jogos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.jogo {
+    background-color: #151515;
+    border: 1px solid #444;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jogo img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+}
+
+.jogo h4 {
+    color: #fff;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.jogo .preco {
+    color: #FFD700;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 2px 0 8px;
+}
+
+.jogo .comprar {
+    margin-top: auto;
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ASSINATURA */
+
+.assinatura-higor {
+    background: #050505;
+    border-top: 1px solid #000;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.assinatura-higor img {
+    display: block;
+    width: 308px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        gap: 14px;
+    }
+
+    .area-banner {
+        min-height: 320px;
+        padding: 30px;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
     }
 
     header h1 {
-       
-        color: white;
-        white-space: nowrap;  
-        font-size: 20px;
-         margin-right: 10px;
-         transform: translateY(-6px);
-         letter-spacing: -1px;
+        font-size: 19px;
     }
 
-    header h1 span {
-        color: #FFD700;
-    }
-
-     nav {
-        display: flex;
-        gap: 20px;
-     }
-
-     .ativo {
-        color: #FFD700;
-        border-bottom: 2px solid #FFD700;
-        padding: 1px;
-     }
-
-     nav a {
-        color: #fff;
-        text-decoration: none;
-        display: inline-block;
-     }
-
-     body {
-        background-color: #000;
-        color: #fff;
-     }
-    
-     h2 span {
-        color: #FFD700;
-        font-family: Arial, Helvetica, sans-serif;
-     }
-     h2 .traco-titulo {
-        display: block;
-        width: 40px;
-        height: 2px;
-        background-color: #FFD700;
-        margin-bottom: 8px;
-     }
-
-     .produtos-container {
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        justify-content: center;
-        gap: 10px;
-        
-        
-     }
-     .produto img {
+    nav {
         width: 100%;
-        height: 140px;
-        object-fit: contain;
-        display: block;
-        margin-bottom: 0;
-     }
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .area-banner {
+        min-height: 300px;
+        padding: 22px;
+        background-position: center;
+    }
+
+    .texto-banner {
+        font-size: clamp(25px, 7vw, 32px);
+        max-width: 100%;
+    }
+
+    .descricao-banner {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .botao-banner {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .secao-produtos {
+        padding: 10px;
+    }
+
+    .titulo-secao {
+        font-size: 23px;
+        margin: 20px 10px;
+    }
+
+    .produtos-container,
+    .jogos-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 5px;
+    }
 
     .produto {
-        background-color: #151515;
-        border: 1px solid #444;
-        border-radius: 12px;
-        padding: 5px;
-        text-align: center;
-        box-sizing: border-box;
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        
+        padding: 8px;
+    }
 
-        }
+    .produto img {
+        height: 110px;
+    }
 
-        .produto .comprar {
-            margin-top: auto;
-            background-color: #FFD700;
-            color: #000;
-            border: none;
-            border-radius: 6px;
-            padding: 3px 22px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .produto h3,
+    .jogo h4 {
+        font-size: 12px;
+    }
 
-        .produto h3 {
-            font-size: 14px;
-            margin: 2px 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+    .produto .preco,
+    .jogo .preco {
+        font-size: 13px;
+    }
 
-        .produto .preco {
-            color: #FFD700;
-            font-size: 15px;
-            font-weight: bold;
-            margin: 2px 0;
-        }
+    .produto .comprar,
+    .jogo .comprar {
+        padding: 7px 9px;
+        font-size: 12px;
+    }
 
-        .assinatura-higor {
-            background: #050505;
-            border-top: 1px solid #000;
-            padding: 0 ;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-            line-height: 0;
-        }
+    .secao-jogos {
+        padding: 20px 10px;
+    }
 
-        .assinatura-higor img {
-            display: block;
-            width: 308px;
-            max-width: 100%;
-            
-            height: auto;
-            object-fit: contain;
-            image-rendering: auto;
-        }
+    .secao-jogos h2 {
+        font-size: 23px;
+    }
+
+    .secao-jogos h3 {
+        font-size: 17px;
+    }
+
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 360px) {
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .area-banner {
+        padding: 12px;
+    }
+
+    .produtos-container,
+    .jogos-container {
+        gap: 5px;
+    }
+
+    .produto {
+        width: 90%;
+        min-width: 0;
+        padding: 8px;
+        margin: auto;
+    }
+
+    .produto img {
+        width: 90%;
+        height: 65px;
+        object-fit: contain;
+    }
+
+    .produto h3 {
+        font-size: 11px;
+    }
+
+    .produto p {
+        font-size: 10px;
+    }
+
+    .produto button {
+        font-size: 10px;
+        padding: 6px;
+    }
+}
