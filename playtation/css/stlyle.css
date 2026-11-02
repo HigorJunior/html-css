@@ -324,7 +324,7 @@ nav a {
     .area-banner {
         min-height: 300px;
         padding: 22px;
-        background-position: center;
+        background-position: 90% center;
     }
 
     .texto-banner {
@@ -406,6 +406,7 @@ nav a {
 
     .area-banner {
         padding: 12px;
+        background-position: 90% center;
     }
 
     .produtos-container,
