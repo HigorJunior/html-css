@@ -1,4 +1,3 @@
-
 /* CONFIGURAÇÃO GERAL */
 
 * {
@@ -278,12 +277,15 @@ nav a {
     object-fit: contain;
 }
 
-/* CARROSSEL DE IMAGENS */
+/* ========================================
+   CARROSSEL DE IMAGENS
+======================================== */
 
 .carrossel {
     width: 100%;
     min-height: 350px;
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 30px;
     margin: 30px 0;
@@ -346,7 +348,7 @@ nav a {
 }
 
 .frase-venom span {
-    font-family: 'Creespter', cursive;
+    font-family: 'Creepster', cursive;
     display: block;
     font-size: 25px;
     letter-spacing: 2px;
@@ -355,7 +357,91 @@ nav a {
     margin-top: 25px;
 }
 
-/* TABLETS */
+/* BOTÃO DE COMPRA DO VENOM */
+
+.botao-venom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    padding: 7px 12px;
+    margin: 0 auto;
+
+    position: relative;
+    left: 100px;
+    top: -50px;
+
+    gap: 12px;
+    background: #e6bd00;;
+    color: #000;
+    border: 2px solid #e6bd00;
+    border-radius: 5px;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+.botao-venom:hover {
+    background: #fff;
+    border-color: #fff;
+}
+
+@keyframes tremer {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.botao-venom:active {
+    animation: tremer 0.3s ease;
+}
+
+/* ÍCONE DO CARRINHO */
+
+.icone-carrinho {
+    font-size: 20px;
+}
+
+/* FAIXA DE DESTAQUE */
+
+.faixa-destaque {
+    width: 100%;
+    min-height: 40px;
+    gap: 8px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+}
+
+.logo-playstation {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.faixa-destaque h2 {
+    font-size: clamp(10px, 3.5vw, 15px);
+    white-space: normal;
+}
+
+.linhas-destaque {
+    left: calc(100% - 25px);
+    gap: 4px;
+}
+
+.linhas-destaque span {
+    width: 4px;
+}
+
+/* ========================================
+   TABLETS
+======================================== */
 
 @media (max-width: 900px) {
 
@@ -374,7 +460,9 @@ nav a {
 
 }
 
-/* CELULARES */
+/* ========================================
+   CELULARES
+======================================== */
 
 @media (max-width: 600px) {
 
@@ -471,101 +559,11 @@ nav a {
         font-size: 17px;
     }
 
-}
-
-/* CARROSSEL DE IMAGENS */
-
-.carrossel {
-    width: 100%;
-    min-height: 350px;
-
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    gap: 30px;
-    margin: 30px 0;
-    padding: 20px;
-
-    background-color: #050505;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* ÁREA DAS IMAGENS */
-
-.carrossel-container {
-    flex: 1;
-    min-width: 0;
-    height: 310px;
-    position: relative;
-}
-
-.carrossel-container img {
-    position: absolute;
-
-    width: 100%;
-    height: 100%;
-
-    top: 0;
-    left: 0;
-
-    object-fit: contain;
-    object-position: left center;
-
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.carrossel-container img.ativa {
-    opacity: 1;
-}
-
-/* ÁREA DAS FRASES */
-
-.frase-venom {
-    flex: 1;
-    min-width: 0;
-    color: white;
-    padding: 20px;
-}
-
-.frase-venom h1 {
-    font-family: 'Metal Mania', cursive;
-    font-size: 55px;
-    letter-spacing: 2px;
-    color: #bdbdbd;
-    font-weight: 900;
-    margin: 0 0 20px;
-}
-
-.frase-venom p {
-    font-family: 'Oswald', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.frase-venom span {
-    font-family: 'Creepster', cursive;
-    display: block;
-    font-size: 25px;
-    letter-spacing: 2px;
-    font-weight: bold;
-    color: #bdbdbd;
-    margin-top: 25px;
-}
-
-/* RESPONSIVIDADE DO CARROSSEL */
-
-@media screen and (max-width: 600px) {
+    /* CARROSSEL NO CELULAR */
 
     .carrossel {
         display: flex;
         flex-direction: column;
-
         align-items: stretch;
 
         width: 100%;
@@ -583,7 +581,6 @@ nav a {
 
     .carrossel-container {
         position: relative;
-
         width: 100%;
         min-width: 0;
         height: 220px;
@@ -596,7 +593,6 @@ nav a {
 
     .carrossel-container img {
         position: absolute;
-
         width: 100%;
         height: 100%;
 
@@ -638,4 +634,45 @@ nav a {
         margin-top: 10px;
     }
 
+    /* FAIXA DE DESTAQUE NO CELULAR */
+
+    .faixa-destaque {
+        width: 100%;
+        min-height: 40px;
+        gap: 8px;
+        padding: 8px 12px;
+        margin-bottom: 16px;
+    }
+
+
+    .faixa-destaque h2 {
+        font-size: clamp(10px, 3.5vw, 15px);
+        white-space: normal;
+    }
+
+    .linhas-destaque {
+        left: calc(100% - 25px);
+        gap: 4px;
+    }
+
+    .linhas-destaque span {
+        width: 4px;
+    }
+
+    /* BOTÃO VENOM NO CELULAR */
+
+    .botao-venom {
+        padding: 7px 12px;
+        font-size: 11px;
+        gap: 5px;
+
+        left: 0;
+        margin: 0 auto;
+    }
+
+    .icone-carrinho {
+        font-size: 15px;
+    }
+
 }
+
