@@ -1,3 +1,4 @@
+
 /* CONFIGURAÇÃO GERAL */
 
 * {
@@ -56,15 +57,36 @@ nav a {
     color: #fff;
     text-decoration: none;
     display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
 }
 
-.ativo {
+/* LINHA AMARELA */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #FFD700;
+    transition: width 0.3s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* INÍCIO PERMANECE AMARELO */
+nav a.ativo {
     color: #FFD700;
-    border-bottom: 2px solid #FFD700;
-    padding-bottom: 4px;
 }
 
-/* BANNER */
+nav a.ativo::after {
+    width: 100%;
+}
+/* BANNER PRINCIPAL */
 
 .area-banner {
     position: relative;
@@ -78,7 +100,6 @@ nav a {
     background-position: center;
     background-repeat: no-repeat;
 
-    width: 100%;
     min-height: 350px;
     padding: 40px;
     gap: 15px;
@@ -186,6 +207,7 @@ nav a {
     padding: 8px 12px;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
 /* SEÇÃO DE JOGOS */
@@ -253,33 +275,10 @@ nav a {
     padding: 8px 12px;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
-/* ASSINATURA */
-
-.assinatura-higor {
-    background: #050505;
-    border-top: 1px solid #000;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.assinatura-higor img {
-    display: block;
-    width: 308px;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-/* ========================================
-   CARROSSEL DE IMAGENS
-======================================== */
+/* CARROSSEL DE IMAGENS */
 
 .carrossel {
     width: 100%;
@@ -373,7 +372,7 @@ nav a {
     top: -50px;
 
     gap: 12px;
-    background: #e6bd00;;
+    background: #e6bd00;
     color: #000;
     border: 2px solid #e6bd00;
     border-radius: 5px;
@@ -409,39 +408,29 @@ nav a {
     font-size: 20px;
 }
 
-/* FAIXA DE DESTAQUE */
+/* ASSINATURA */
 
-.faixa-destaque {
+.assinatura-higor {
+    background: #050505;
+    border-top: 1px solid #000;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    min-height: 40px;
-    gap: 8px;
-    padding: 8px 12px;
-    margin-bottom: 16px;
 }
 
-.logo-playstation {
-    width: 42px;
-    height: 42px;
+.assinatura-higor img {
+    display: block;
+    width: 308px;
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
-.faixa-destaque h2 {
-    font-size: clamp(10px, 3.5vw, 15px);
-    white-space: normal;
-}
-
-.linhas-destaque {
-    left: calc(100% - 25px);
-    gap: 4px;
-}
-
-.linhas-destaque span {
-    width: 4px;
-}
-
-/* ========================================
-   TABLETS
-======================================== */
+/* TABLETS */
 
 @media (max-width: 900px) {
 
@@ -460,9 +449,7 @@ nav a {
 
 }
 
-/* ========================================
-   CELULARES
-======================================== */
+/* CELULARES */
 
 @media (max-width: 600px) {
 
@@ -634,31 +621,6 @@ nav a {
         margin-top: 10px;
     }
 
-    /* FAIXA DE DESTAQUE NO CELULAR */
-
-    .faixa-destaque {
-        width: 100%;
-        min-height: 40px;
-        gap: 8px;
-        padding: 8px 12px;
-        margin-bottom: 16px;
-    }
-
-
-    .faixa-destaque h2 {
-        font-size: clamp(10px, 3.5vw, 15px);
-        white-space: normal;
-    }
-
-    .linhas-destaque {
-        left: calc(100% - 25px);
-        gap: 4px;
-    }
-
-    .linhas-destaque span {
-        width: 4px;
-    }
-
     /* BOTÃO VENOM NO CELULAR */
 
     .botao-venom {
@@ -676,3 +638,777 @@ nav a {
 
 }
 
+/* RODAPÉ GAME HOUSE */
+
+.rodape-game {
+    width: 100%;
+    margin-top: 60px;
+    background: #050505;
+    color: #fff;
+    border-top: 3px solid #FFD700;
+    overflow: hidden;
+}
+
+/* COLUNAS DO RODAPÉ */
+
+.rodape-colunas {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 55px 35px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* CADA COLUNA */
+
+.rodape-coluna {
+    padding: 5px 25px;
+    border-right: none;
+}
+
+/* TÍTULOS */
+
+.rodape-coluna h3 {
+    color: #FFD700;
+    font-size: 23px;
+    font-weight: 900;
+    margin: 0 0 22px;
+}
+
+/* TEXTOS */
+
+.rodape-coluna p {
+    color: #e5e5e5;
+    font-size: 16px;
+    margin: 0 0 15px;
+    line-height: 1.4;
+    cursor: default;
+    transition: color 0.2s;
+}
+
+.rodape-coluna p:hover {
+    color: #FFD700;
+}
+
+/* DIREITOS AUTORAIS */
+
+.rodape-direitos {
+    width: 100%;
+    min-height: 75px;
+    border-top: 2px solid #FFD700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px 25px;
+    flex-wrap: wrap;
+}
+
+.rodape-direitos p {
+    color: #ddd;
+    font-size: 15px;
+    margin: 0;
+    text-align: center;
+}
+/* FONTE DA SEÇÃO SOBRE */
+
+.linha-sobre {
+    border: none;
+    height: 1px;
+    background-color: #806F00;
+    margin: 0 0 20px 0;
+}
+
+ .secao-sobre h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    color: #FFD700;
+    text-align: left;
+    margin-left: 0;
+    letter-spacing: 1px;
+}
+.secao-sobre {
+    text-align: left;
+    padding: 0 35px;
+}
+
+.secao-sobre h2 {
+    text-align: left;
+    margin-left: 0;
+}
+
+.secao-sobre p {
+    text-align: left;
+    margin-left: 0;
+}
+.voltar-inicio {
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+    padding: 10px 25px;
+
+    border: 1px solid #FFD700;
+    border-radius: 30px;
+
+    color: #FFD700;
+    text-decoration: none;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.voltar-inicio:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+.linha-direitos {
+    width: 3px;
+    height: 30px;
+    background: #FFD700;
+}
+
+/* TABLETS - RODAPÉ */
+
+@media (max-width: 900px) {
+
+    .rodape-colunas {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 35px;
+    }
+
+    .rodape-coluna:nth-child(3) {
+        border-right: none;
+    }
+
+}
+
+/* CELULARES - RODAPÉ */
+
+@media (max-width: 600px) {
+
+    .rodape-colunas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 35px 15px;
+        row-gap: 30px;
+    }
+
+    .rodape-coluna {
+        padding: 5px 12px;
+        border-right: 2px solid #FFD700;
+    }
+
+    .rodape-coluna:nth-child(2n) {
+        border-right: none;
+    }
+
+    .rodape-coluna h3 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .rodape-coluna p {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .rodape-direitos {
+        flex-direction: column;
+        gap: 10px;
+        padding: 18px 15px;
+    }
+
+    .rodape-direitos p {
+        font-size: 12px;
+    }
+
+    .linha-direitos {
+        width: 45px;
+        height: 2px;
+    }
+
+}
+
+
+/* ========================================
+   CHECKOUT - GAMING HOUSE
+======================================== */
+
+body:has(.pagina-compra) {
+    background: #090909;
+    color: #fff;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-compra {
+    background: #050505;
+    padding: 20px 5%;
+    border-bottom: 1px solid #252525;
+}
+
+.cabecalho-compra h1 span {
+    color: #FFD700;
+}
+
+.cabecalho-compra a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.cabecalho-compra a:hover {
+    color: #FFD700;
+}
+
+/* ÁREA PRINCIPAL */
+
+.pagina-compra {
+    width: 90%;
+    max-width: 1150px;
+    margin: 55px auto;
+}
+
+.titulo-compra {
+    margin-bottom: 30px;
+}
+
+.subtitulo-compra,
+.resumo-legenda {
+    color: #FFD700;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo-compra h2 {
+    font-size: 38px;
+    margin: 12px 0;
+    color: #fff;
+}
+
+.titulo-compra h2 span {
+    color: #FFD700;
+}
+
+.titulo-compra p {
+    color: #999;
+    font-size: 14px;
+}
+
+/* ETAPAS */
+
+.etapas-compra {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+.etapa {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #777;
+    white-space: nowrap;
+}
+
+.etapa span {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #444;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.etapa.ativa {
+    color: #fff;
+}
+
+.etapa.ativa span {
+    background: #FFD700;
+    border-color: #FFD700;
+    color: #000;
+    font-weight: bold;
+}
+
+.etapa p {
+    font-size: 12px;
+}
+
+.linha-etapas {
+    height: 1px;
+    background: #333;
+    flex: 1;
+}
+
+/* ORGANIZAÇÃO DO CHECKOUT */
+
+.layout-checkout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.8fr);
+    gap: 25px;
+    align-items: start;
+}
+
+/* FORMULÁRIO */
+
+.formulario-checkout {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.grupo-formulario {
+    margin-bottom: 35px;
+}
+
+.grupo-formulario h3 {
+    font-size: 17px;
+    margin: 0 0 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #303030;
+}
+
+.grupo-formulario h3 span {
+    color: #FFD700;
+}
+
+.campos-duplos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    color: #ddd;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.campo input {
+    width: 100%;
+    padding: 14px;
+    background: #0c0c0c;
+    border: 1px solid #353535;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 13px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.campo input::placeholder {
+    color: #777;
+}
+
+.campo input:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.08);
+}
+
+/* BOTÃO */
+
+.botao-finalizar {
+    width: 100%;
+    padding: 17px;
+    border: none;
+    border-radius: 6px;
+    background: #FFD700;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-finalizar:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.botao-finalizar span {
+    margin-left: 8px;
+}
+
+.continuar-comprando {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.continuar-comprando:hover {
+    color: #FFD700;
+}
+
+/* RESUMO DO PEDIDO */
+
+.resumo-pedido {
+    background: #151515;
+    border: 1px solid #292929;
+    border-radius: 12px;
+    padding: 25px;
+    position: sticky;
+    top: 25px;
+}
+
+.resumo-pedido h3 {
+    font-size: 20px;
+    margin: 12px 0 25px;
+}
+
+.produto-resumo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
+    border-top: 1px solid #303030;
+    border-bottom: 1px solid #303030;
+}
+
+.icone-produto {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    background: #252525;
+    border-radius: 8px;
+    font-size: 25px;
+}
+
+.produto-resumo strong {
+    font-size: 13px;
+}
+
+.produto-resumo p {
+    color: #888;
+    font-size: 12px;
+    margin: 6px 0 0;
+}
+
+.detalhes-resumo {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.detalhes-resumo div,
+.total-pedido {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.detalhes-resumo span,
+.total-pedido span {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.detalhes-resumo strong {
+    font-size: 12px;
+    text-align: right;
+}
+
+.total-pedido {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    align-items: center;
+}
+
+.total-pedido strong {
+    color: #FFD700;
+    font-size: 17px;
+    text-align: right;
+}
+
+.aviso-pedido {
+    background: #202020;
+    padding: 13px;
+    border-radius: 6px;
+    color: #aaa;
+    font-size: 11px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+/* RODAPÉ */
+
+.rodape-compra {
+    background: #050505;
+    border-top: 1px solid #252525;
+    color: #777;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 12px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+
+    .layout-checkout {
+        grid-template-columns: 1fr;
+    }
+
+    .resumo-pedido {
+        position: static;
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .pagina-compra {
+        width: 92%;
+        margin: 35px auto;
+    }
+
+    .titulo-compra h2 {
+        font-size: 29px;
+    }
+
+    .formulario-checkout {
+        padding: 20px 15px;
+    }
+
+    .campos-duplos {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .etapas-compra {
+        gap: 7px;
+    }
+
+    .etapa {
+        gap: 5px;
+    }
+
+    .etapa p {
+        font-size: 10px;
+    }
+
+    .etapa span {
+        width: 27px;
+        height: 27px;
+        font-size: 10px;
+    }
+
+    .linha-etapas {
+        min-width: 8px;
+    }
+
+}
+
+
+
+/* =================================
+   TELA DE PEDIDO CONFIRMADO
+================================= */
+
+.pedido-confirmado {
+    text-align: center;
+    padding: 45px 20px;
+    animation: aparecerPedido 0.5s ease;
+}
+
+@keyframes aparecerPedido {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CÍRCULO VERDE */
+
+.icone-confirmacao {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(34, 164, 90, 0.12);
+    border: 2px solid #22a45a;
+    color: #22a45a;
+    font-size: 45px;
+    font-weight: bold;
+    box-shadow: 0 0 25px rgba(34, 164, 90, 0.12);
+}
+
+/* IDENTIDADE DA LOJA */
+
+.selo-confirmacao {
+    color: #FFD700;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/* TÍTULO */
+
+.pedido-confirmado h2 {
+    color: #22a45a;
+    font-size: 30px;
+    margin: 15px 0;
+}
+
+/* MENSAGENS */
+
+.texto-confirmacao {
+    color: #fff;
+    font-size: 16px;
+}
+
+.mensagem-confirmacao {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 25px auto;
+    max-width: 380px;
+}
+
+/* NÚMERO DO PEDIDO */
+
+.numero-pedido {
+    max-width: 300px;
+    margin: 30px auto;
+    padding: 18px;
+    background: #202020;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+.numero-pedido span {
+    display: block;
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.numero-pedido strong {
+    color: #FFD700;
+    font-size: 20px;
+}
+
+/* BOTÃO VOLTAR */
+
+.botao-voltar-loja {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 15px 30px;
+    background: #FFD700;
+    color: #000;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.botao-voltar-loja:hover {
+    background: #fff;
+    transform: translateY(-3px);
+}
+
+/* CELULAR */
+
+@media (max-width: 550px) {
+
+    .pedido-confirmado {
+        padding: 35px 10px;
+    }
+
+    .pedido-confirmado h2 {
+        font-size: 24px;
+    }
+
+}
+
+
+
+/* PRODUTO NO RESUMO DO CHECKOUT */
+
+.produto-resumo img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #222;
+}
+
+/* QUANTIDADE */
+
+.quantidade-resumo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.quantidade-resumo input {
+    width: 70px;
+    padding: 8px;
+    background-color: #151515;
+    color: white;
+    border: 1px solid #FFD700;
+    border-radius: 6px;
+}
+
+/* PRODUTO NA CONFIRMAÇÃO */
+
+.produto-confirmado-resumo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #151515;
+    border: 1px solid #444;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.produto-confirmado-resumo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.produto-confirmado-resumo h3 {
+    margin: 0 0 8px;
+}
+
+.produto-confirmado-resumo p {
+    margin: 5px 0;
+}
+
+.produto-confirmado-resumo strong {
+    color: #FFD700;
+}

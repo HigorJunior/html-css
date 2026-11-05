@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Finalizar compra | Game House</title>
+
+    <link rel="stylesheet" href="css/stlyle.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-compra">
+        <h1>🎮 GAME <span>HOUSE</span></h1>
+        <a href="index.html">← Voltar à loja</a>
+    </header>
+
+    <main class="pagina-compra">
+
+        <div class="titulo-compra">
+            <span class="subtitulo-compra">GAME HOUSE / CHECKOUT</span>
+            <h2>Finalize sua <span>compra</span></h2>
+            <p>Preencha seus dados para concluir seu pedido.</p>
+        </div>
+
+        <div class="etapas-compra">
+            <div class="etapa ativa">
+                <span>01</span>
+                <p>Identificação</p>
+            </div>
+
+            <div class="linha-etapas"></div>
+
+            <div class="etapa">
+                <span>02</span>
+                <p>Entrega</p>
+            </div>
+
+            <div class="linha-etapas"></div>
+
+            <div class="etapa">
+                <span>03</span>
+                <p>Pedido</p>
+            </div>
+        </div>
+
+        <div class="layout-checkout">
+
+            <form id="form-compra" class="formulario-checkout">
+
+                <section class="grupo-formulario">
+
+                    <h3><span>01.</span> Dados pessoais</h3>
+
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome"
+                            placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div class="campos-duplos">
+
+                        <div class="campo">
+                            <label for="email">E-mail</label>
+                            <input type="text" id="email" name="email"
+                                placeholder="seuemail@exemplo.com">
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" id="telefone" name="telefone"
+                                placeholder="(00) 00000-0000">
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="grupo-formulario">
+
+                    <h3><span>02.</span> Endereço de entrega</h3>
+
+                    <div class="campos-duplos">
+
+                        <div class="campo">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" name="cep"
+                                placeholder="00000-000">
+                        </div>
+
+                        <div class="campo">
+                            <label for="numero">Número</label>
+                            <input type="text" id="numero" name="numero"
+                                placeholder="Número da residência">
+                        </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <label for="endereco">Rua ou avenida</label>
+                        <input type="text" id="endereco" name="endereco"
+                            placeholder="Digite seu endereço">
+                    </div>
+
+                    <div class="campos-duplos">
+
+                        <div class="campo">
+                            <label for="bairro">Bairro</label>
+                            <input type="text" id="bairro" name="bairro"
+                                placeholder="Seu bairro">
+                        </div>
+
+                        <div class="campo">
+                            <label for="cidade">Cidade</label>
+                            <input type="text" id="cidade" name="cidade"
+                                placeholder="Sua cidade">
+                        </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <label for="estado">Estado</label>
+                        <input type="text" id="estado" name="estado"
+                            placeholder="Ex.: MG">
+                    </div>
+
+                </section>
+
+                <button type="submit" class="botao-finalizar">
+                    FINALIZAR PEDIDO <span>→</span>
+                </button>
+
+                <a href="index.html" class="continuar-comprando">
+                    ← Continuar comprando
+                </a>
+
+            </form>
+
+            <aside class="resumo-pedido">
+
+                <span class="resumo-legenda">SEU PEDIDO</span>
+
+                <h3>Resumo da compra</h3>
+
+                <div class="detalhes-resumo">
+
+    <div>
+        <span>Subtotal</span>
+        <strong id="subtotal-resumo">A confirmar</strong>
+    </div>
+
+    <div>
+        <span>Entrega</span>
+        <strong>A combinar</strong>
+    </div>
+
+</div>
+
+<div class="total-pedido">
+    <span>Total do pedido</span>
+    <strong id="total-resumo">A confirmar</strong>
+</div>
+  
+  <div class="detalhes-resumo">
+
+    <div>
+        <span>Subtotal</span>
+        <strong id="subtotal-resumo">A confirmar</strong>
+    </div>
+
+    <div>
+        <span>Entrega</span>
+        <strong>A combinar</strong>
+    </div>
+
+</div>
+
+<div class="total-pedido">
+    <span>Total do pedido</span>
+    <strong id="total-resumo">A confirmar</strong>
+</div>
+
+                <div class="total-pedido">
+                    <span>Total do pedido</span>
+                    <strong>A confirmar</strong>
+                </div>
+
+                <p class="aviso-pedido">
+                    <span>🔒</span>
+                    Esta é uma demonstração de compra. Nenhum pagamento será realizado.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="rodape-compra">
+        <p>© 2026 Game House. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./css/javascript/script.js"></script>
+
+</body>
+
+</html>
