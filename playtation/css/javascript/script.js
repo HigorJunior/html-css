@@ -175,7 +175,7 @@ if (formularioCompra) {
                 <div class="icone-confirmacao">✓</div>
 
                 <span class="selo-confirmacao">
-                    GAMING HOUSE
+                    GAME HOUSE
                 </span>
 
                 <h2>PEDIDO CONFIRMADO!</h2>
@@ -192,7 +192,7 @@ if (formularioCompra) {
                 </div>
 
                 <p class="mensagem-confirmacao">
-                    Agradecemos por escolher a Gaming House.
+                    Agradecemos por escolher a Game House.
                     Esperamos você novamente!
                 </p>
 
