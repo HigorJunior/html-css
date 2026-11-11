@@ -1,4 +1,5 @@
-/*CONFIGURAÇOES GERAIS*/
+ 
+/* CONFIGURAÇÕES GERAIS */
 
 * {
     margin: 0;
@@ -16,38 +17,38 @@ body {
     background: #fffefa;
 }
 
-.container{
+.container {
     width: 90%;
     max-width: 1250px;
     margin: auto;
 }
 
 :root {
-    --azul:#07396c;
-    --turquesa:#08afd0;
-    --cinza:#6498c1;
-    --dourado:#d6c29c;
-    --branco:#fffefa;
+    --azul: #07396c;
+    --turquesa: #08afd0;
+    --cinza: #6498c1;
+    --dourado: #d6c29c;
+    --branco: #fffefa;
 }
 
-/*CABEÇALHO*/
+/* CABEÇALHO */
 
-.cabecalho{
+.cabecalho {
     width: 100%;
-    background: rgba(255, 254,250,0.97);
+    background: rgba(255, 254, 250, 0.97);
     position: relative;
     z-index: 10;
     border-bottom: 1px solid #f1eee8;
 }
 
-.navegacao{
+.navegacao {
     min-height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -55,72 +56,76 @@ body {
     color: var(--azul);
 }
 
-.logo-simbolo{
-    font-size: 55px;
-    color: var(--turquesa);
-    font-weight: bold;
+.logo-imagem {
+    display: block;
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    max-height: 35px;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
-.logo-texto{
+.logo-texto {
     display: flex;
     flex-direction: column;
     gap: 1px;
 }
 
-.logo-texto strong{
+.logo-texto strong {
     font-size: 16px;
     letter-spacing: 1px;
 }
 
-.logo-texto-small{
+.logo-texto small {
     font-size: 10px;
     letter-spacing: 3px;
     color: var(--cinza);
 }
 
-.menu{
+.menu {
     display: flex;
     gap: 45px;
 }
 
-.menu a{
+.menu a {
     text-decoration: none;
     color: var(--azul);
     font-size: 15px;
     transition: 0.3s;
 }
 
-.menu a:hover{
+.menu a:hover {
     color: var(--turquesa);
 }
 
-.menu-mobile{
+.menu-mobile {
     display: none;
 }
 
-/*BANNER PRNCIPAL*/
+/* BANNER PRINCIPAL */
 
-.hero{
+.hero {
     min-height: 540px;
-    background: linear-gradient(90deg,#fffefa 35%, #f4f4f0 100%);
+    background: linear-gradient(90deg, #fffefa 35%, #f4f4f0 100%);
     overflow: hidden;
 }
 
-.hero-conteudo{
+.hero-conteudo {
     min-height: 540px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.hero-texto{
+.hero-texto {
     width: 50%;
     padding: 65px 0;
     position: relative;
     z-index: 2;
 }
 
-.subtitulo{
+.subtitulo {
     display: inline-block;
     color: var(--turquesa);
     font-size: 12px;
@@ -129,13 +134,12 @@ body {
     margin-bottom: 25px;
 }
 
-.hero h1{
-    font-size: clamp(35px,4.5vw,57px);
+.hero h1 {
+    font-size: clamp(35px, 4.5vw, 57px);
     line-height: 1.12;
     letter-spacing: -2px;
     color: var(--azul);
     margin-bottom: 25px;
-
 }
 
 .hero h1 span,
@@ -144,15 +148,15 @@ body {
     color: var(--turquesa);
 }
 
-.hero-texto p{
+.hero-texto p {
     color: var(--cinza);
     font-size: 19px;
-  line-height: 1.7;
-  max-width: 470px;
-  margin-bottom: 30px;
+    line-height: 1.7;
+    max-width: 470px;
+    margin-bottom: 30px;
 }
 
-.botao-whatsapp{
+.botao-whatsapp {
     display: inline-flex;
     align-items: center;
     gap: 13px;
@@ -189,7 +193,7 @@ body {
     object-position: bottom center;
 }
 
-/*ESPECIALIDADE*/
+/* ESPECIALIDADES */
 
 .especialidades {
     background: #fffefa;
@@ -199,10 +203,10 @@ body {
 
 .especialidades-grid {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
-.especialidade{
+.especialidade {
     text-align: center;
     padding: 10px 15px;
     border-right: 1px solid #e9dfce;
@@ -224,24 +228,46 @@ body {
     margin: 0 auto 15px;
 }
 
-.especialidade h3{
+.especialidade h3 {
     font-size: 19px;
     line-height: 1.4;
     color: var(--azul);
 }
 
-/*SOBRE MIM*/
+/* SOBRE MIM */
 
 .sobre {
     padding: 85px 0;
     background: #f9f9f6;
 }
 
-.sobre-conteudo{
-    max-width: 800px;
+.sobre-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1250px;
 }
 
-.sobre h2{
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-imagem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 420px;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.sobre h2 {
     font-size: 40px;
     line-height: 1.2;
     margin-bottom: 20px;
@@ -253,35 +279,35 @@ body {
     line-height: 1.8;
 }
 
-/*CONSULTORIOS*/
+/* CONSULTÓRIOS */
 
 .consultorios {
     padding: 80px 0 65px;
     background: var(--branco);
 }
 
-.titulo-secao{
+.titulo-secao {
     margin-bottom: 35px;
 }
 
-.titulo-secao.subtitulo {
+.titulo-secao .subtitulo {
     margin-bottom: 15px;
 }
 
-.titulo-secao h2{
+.titulo-secao h2 {
     font-size: 39px;
     line-height: 1.2;
     margin-bottom: 15px;
 }
 
-.titulo-secao p{
+.titulo-secao p {
     color: var(--cinza);
     font-size: 17px;
 }
 
 .consultorios-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
@@ -323,13 +349,13 @@ body {
     margin-bottom: 12px;
 }
 
-.card-texto h3{
+.card-texto h3 {
     font-size: 24px;
     color: var(--azul);
     margin-bottom: 12px;
 }
 
-.linha-azul{
+.linha-azul {
     height: 2px;
     width: 55px;
     background: var(--turquesa);
@@ -343,7 +369,7 @@ body {
     margin-bottom: 18px;
 }
 
-.card-texto a{
+.card-texto a {
     color: var(--turquesa);
     text-decoration: none;
     font-size: 14px;
@@ -366,7 +392,7 @@ body {
     object-fit: cover;
 }
 
-/*RODAPE*/
+/* RODAPÉ */
 
 .rodape {
     padding: 45px 0;
@@ -382,7 +408,7 @@ body {
     margin-bottom: 8px;
 }
 
-.rodape h3{
+.rodape h3 {
     font-size: 13px;
     letter-spacing: 4px;
     color: var(--azul);
@@ -392,7 +418,6 @@ body {
     color: var(--cinza);
     font-size: 12px;
     margin-top: 8px;
-
 }
 
 .rodape a {
@@ -403,14 +428,15 @@ body {
     font-size: 13px;
 }
 
-/*RESPONSIVIDADE*/
+/* RESPONSIVIDADE - NOTEBOOKS E TABLETS */
 
-@media( max-width:850px) {
+@media (max-width: 850px) {
+
     .menu {
         gap: 20px;
     }
 
-    .hero h1{
+    .hero h1 {
         font-size: 40px;
     }
 
@@ -423,7 +449,7 @@ body {
         padding: 18px 13px;
     }
 
-    .card-texto h3{
+    .card-texto h3 {
         font-size: 19px;
     }
 
@@ -432,31 +458,36 @@ body {
     }
 }
 
-@media(max-width:600px) {
+/* RESPONSIVIDADE - CELULARES */
 
-    .container{
+@media (max-width: 600px) {
+
+    .container {
         width: 90%;
     }
 
-    /*MENU mobile*/
+    /* MENU MOBILE */
 
-    .navegacao{
+    .navegacao {
         min-height: 80px;
     }
 
-    .logo-simbolo{
-        font-size: 42pxpx;
+    .logo-imagem {
+        width: 25px;
+        height: 25px;
+        max-width: 25px;
     }
 
     .logo-texto strong {
         font-size: 11px;
     }
-    .logo-texto small{
+
+    .logo-texto small {
         font-size: 8px;
         letter-spacing: 2px;
     }
 
-    .menu-mobile{
+    .menu-mobile {
         display: flex;
         flex-direction: column;
         gap: 5px;
@@ -465,11 +496,10 @@ body {
         cursor: pointer;
     }
 
-    .menu-mobile span{
+    .menu-mobile span {
         width: 26px;
         height: 2px;
         background: var(--azul);
-
     }
 
     .menu {
@@ -490,13 +520,13 @@ body {
         display: flex;
     }
 
-    /*BANNER MOBILE*/
+    /* BANNER MOBILE */
 
     .hero {
         min-height: auto;
     }
 
-    .hero-conteudo{
+    .hero-conteudo {
         flex-direction: column;
         min-height: auto;
     }
@@ -505,27 +535,29 @@ body {
         width: 100%;
         padding: 55px 0 20px;
     }
-    .hero h1{
+
+    .hero h1 {
         font-size: 39px;
         letter-spacing: -1.5px;
     }
 
-    .hero-texto p{
+    .hero-texto p {
         font-size: 16px;
     }
 
-    .hero-imagem{
+    .hero-imagem {
         width: 100%;
         height: 350px;
     }
 
-    /*ESPECIALIDADES*/
+    /* ESPECIALIDADES */
 
-    .especialidade{
+    .especialidade {
         padding: 30px 0;
     }
+
     .especialidades-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         row-gap: 25px;
     }
 
@@ -533,14 +565,44 @@ body {
         border-right: none;
     }
 
-    .especialidade h3{
+    .especialidade h3 {
         font-size: 16px;
     }
 
-    /*SOBRE*/
+    /* SOBRE MIM */
 
     .sobre {
         padding: 60px 0;
+    }
+
+    .sobre-conteudo {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 25px;
+    }
+
+    .sobre-texto {
+        width: 100%;
+    }
+
+    .sobre-imagem {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sobre-imagem img {
+        width: 100%;
+        max-width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
+
+    .sobre-descricao {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0 15px;
     }
 
     .sobre h2,
@@ -552,9 +614,9 @@ body {
         font-size: 15px;
     }
 
-    /*CONSULTORIOS*/
+    /* CONSULTÓRIOS */
 
-    .consultorios{
+    .consultorios {
         padding: 60px 0 45px;
     }
 
@@ -562,16 +624,16 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .card-consultorio{
+    .card-consultorio {
         min-height: 250px;
     }
 
-    .card-texto{
+    .card-texto {
         width: 60%;
         padding: 20px 14px;
     }
 
-    .card-texto h3{
+    .card-texto h3 {
         font-size: 19px;
     }
 
@@ -586,5 +648,4 @@ body {
     .card-texto a {
         font-size: 12px;
     }
-
 }
