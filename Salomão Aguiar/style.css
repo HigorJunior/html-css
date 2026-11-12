@@ -31,12 +31,15 @@ body {
     --branco: #fffefa;
 }
 
+
 /* CABEÇALHO */
 
 .cabecalho {
     width: 100%;
-    background: rgba(255, 254, 250, 0.97);
-    position: relative;
+   background: #f0f5f9;
+    position: sticky;
+    top: 0;
+
     z-index: 10;
     border-bottom: 1px solid #f1eee8;
 }
@@ -102,6 +105,7 @@ body {
 .menu-mobile {
     display: none;
 }
+
 
 /* BANNER PRINCIPAL */
 
@@ -193,6 +197,7 @@ body {
     object-position: bottom center;
 }
 
+
 /* ESPECIALIDADES */
 
 .especialidades {
@@ -233,6 +238,7 @@ body {
     line-height: 1.4;
     color: var(--azul);
 }
+
 
 /* SOBRE MIM */
 
@@ -285,12 +291,136 @@ body {
     line-height: 1.8;
 }
 
-/* CONSULTÓRIOS */
 
-.consultorios {
-    padding: 80px 0 65px;
-    background: var(--branco);
+/* RESULTADOS - ANTES E DEPOIS */
+
+.resultados {
+    padding: 85px 0;
+    background: #f9f9f6;
 }
+
+.resultados-titulo {
+    margin-bottom: 40px;
+}
+
+/* ESTRUTURA DO CARROSSEL */
+
+.carrossel-resultados {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.resultados-janela {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.resultados-trilho {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.resultados-pagina {
+    flex: 0 0 100%;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* CARTÕES DOS RESULTADOS */
+
+.card-resultado {
+    min-width: 0;
+    padding: 18px;
+    background: #fffefa;
+    border: 1px solid #d7e0e6;
+    border-radius: 13px;
+    overflow: hidden;
+}
+
+.comparacao {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.foto-resultado {
+    min-width: 0;
+}
+
+.foto-resultado > span {
+    display: block;
+    color: var(--azul);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.imagem-placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #e8edf2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    color: var(--cinza);
+    font-size: 12px;
+}
+
+.resultado-descricao {
+    margin-top: 18px;
+}
+
+.resultado-descricao h3 {
+    color: var(--azul);
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.resultado-descricao p {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* SETAS DO CARROSSEL */
+
+.seta-resultados {
+    flex-shrink: 0;
+    width: 43px;
+    height: 43px;
+    border: 1px solid var(--turquesa);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--azul);
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.seta-resultados:hover:not(:disabled) {
+    background: var(--turquesa);
+    color: white;
+}
+
+.seta-resultados:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+
+/* TÍTULOS DAS SEÇÕES */
 
 .titulo-secao {
     margin-bottom: 35px;
@@ -309,6 +439,126 @@ body {
 .titulo-secao p {
     color: var(--cinza);
     font-size: 17px;
+}
+
+
+/* NOSSO ESPAÇO - DOIS CARROSSÉIS INDEPENDENTES */
+
+.estrutura {
+    padding: 85px 0;
+    background: var(--branco);
+}
+
+.estrutura-titulo {
+    margin-bottom: 40px;
+}
+
+.estrutura-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.estrutura-card {
+    min-width: 0;
+    padding: 22px;
+    background: #fffefa;
+    border: 1px solid #d7e0e6;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(7, 57, 108, 0.05);
+    transition: 0.3s;
+}
+
+.estrutura-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(7, 57, 108, 0.09);
+}
+
+.estrutura-card-titulo {
+    margin-bottom: 18px;
+}
+
+.estrutura-card-titulo .subtitulo {
+    font-size: 10px;
+    margin-bottom: 9px;
+}
+
+.estrutura-card-titulo h3 {
+    color: var(--azul);
+    font-size: 25px;
+}
+
+.estrutura-carrossel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.estrutura-janela {
+    flex: 1;
+    min-width: 0;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e8edf2;
+}
+
+.estrutura-janela img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease;
+}
+
+.seta-estrutura {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--turquesa);
+    border-radius: 50%;
+    background: white;
+    color: var(--azul);
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.seta-estrutura:hover {
+    background: var(--turquesa);
+    color: white;
+}
+
+.estrutura-legenda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.estrutura-legenda span:first-child {
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.estrutura-legenda span:last-child {
+    color: var(--cinza);
+    font-size: 12px;
+}
+
+
+/* CONSULTÓRIOS */
+
+.consultorios {
+    padding: 80px 0 65px;
+    background: var(--branco);
 }
 
 .consultorios-grid {
@@ -398,6 +648,7 @@ body {
     object-fit: cover;
 }
 
+
 /* RODAPÉ */
 
 .rodape {
@@ -434,6 +685,7 @@ body {
     font-size: 13px;
 }
 
+
 /* RESPONSIVIDADE - NOTEBOOKS E TABLETS */
 
 @media (max-width: 850px) {
@@ -462,7 +714,55 @@ body {
     .card-texto p {
         font-size: 12px;
     }
+
+    /* RESULTADOS */
+
+    .resultados-pagina {
+        gap: 15px;
+    }
+
+    .card-resultado {
+        padding: 12px;
+    }
+
+    .comparacao {
+        gap: 8px;
+    }
+
+    .resultado-descricao h3 {
+        font-size: 16px;
+    }
+
+    .resultado-descricao p {
+        font-size: 13px;
+    }
+
+    /* NOSSO ESPAÇO */
+
+    .estrutura-grid {
+        gap: 18px;
+    }
+
+    .estrutura-card {
+        padding: 16px;
+    }
+
+    .estrutura-janela {
+        height: 250px;
+    }
+
+    .estrutura-carrossel {
+        gap: 7px;
+    }
+
+    .seta-estrutura {
+        width: 35px;
+        height: 35px;
+        font-size: 25px;
+    }
+
 }
+
 
 /* RESPONSIVIDADE - CELULARES */
 
@@ -526,6 +826,7 @@ body {
         display: flex;
     }
 
+
     /* BANNER MOBILE */
 
     .hero {
@@ -556,6 +857,7 @@ body {
         height: 350px;
     }
 
+
     /* ESPECIALIDADES */
 
     .especialidade {
@@ -574,6 +876,7 @@ body {
     .especialidade h3 {
         font-size: 16px;
     }
+
 
     /* SOBRE MIM MOBILE */
 
@@ -632,6 +935,92 @@ body {
         font-size: 15px;
     }
 
+
+    /* RESULTADOS MOBILE */
+
+    .resultados {
+        padding: 60px 0;
+    }
+
+    .resultados-titulo {
+        margin-bottom: 30px;
+    }
+
+    .carrossel-resultados {
+        gap: 8px;
+    }
+
+    /* MOSTRA SOMENTE UMA CAIXA NO CELULAR */
+
+    .resultados-pagina {
+        grid-template-columns: 1fr;
+    }
+
+    .card-resultado:nth-child(2) {
+        display: none;
+    }
+
+    .card-resultado {
+        width: 100%;
+        padding: 12px;
+    }
+
+    /* ANTES E DEPOIS PERMANECEM LADO A LADO */
+
+    .comparacao {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .imagem-placeholder {
+        aspect-ratio: 4 / 3;
+    }
+
+    .seta-resultados {
+        width: 32px;
+        height: 32px;
+        font-size: 25px;
+    }
+
+
+    /* NOSSO ESPAÇO MOBILE */
+
+    .estrutura {
+        padding: 60px 0;
+    }
+
+    .estrutura-titulo {
+        margin-bottom: 30px;
+    }
+
+    .estrutura-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .estrutura-card {
+        padding: 16px;
+    }
+
+    .estrutura-card-titulo h3 {
+        font-size: 22px;
+    }
+
+    .estrutura-janela {
+        height: 250px;
+    }
+
+    .estrutura-carrossel {
+        gap: 8px;
+    }
+
+    .seta-estrutura {
+        width: 34px;
+        height: 34px;
+        font-size: 24px;
+    }
+
+
     /* CONSULTÓRIOS */
 
     .consultorios {
@@ -666,4 +1055,5 @@ body {
     .card-texto a {
         font-size: 12px;
     }
+
 }
