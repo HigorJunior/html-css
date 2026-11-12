@@ -1,4 +1,4 @@
- 
+
 /* CONFIGURAÇÕES GERAIS */
 
 * {
@@ -243,18 +243,24 @@ body {
 
 .sobre-conteudo {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 50px;
+    gap: 60px;
     max-width: 1250px;
+    width: 90%;
+    margin: auto;
 }
 
 .sobre-texto {
     flex: 1;
+    min-width: 0;
+    max-width: 530px;
 }
 
 .sobre-imagem {
     flex: 1;
+    min-width: 0;
     display: flex;
     justify-content: center;
 }
@@ -569,7 +575,7 @@ body {
         font-size: 16px;
     }
 
-    /* SOBRE MIM */
+    /* SOBRE MIM MOBILE */
 
     .sobre {
         padding: 60px 0;
@@ -580,13 +586,24 @@ body {
         flex-direction: column;
         align-items: stretch;
         gap: 25px;
+        width: 90%;
     }
 
     .sobre-texto {
-        width: 100%;
+        display: contents;
+    }
+
+    .sobre-texto .subtitulo {
+        order: 1;
+        margin-bottom: -15px;
+    }
+
+    .sobre-texto h2 {
+        order: 2;
     }
 
     .sobre-imagem {
+        order: 3;
         width: 100%;
         justify-content: center;
     }
@@ -600,8 +617,9 @@ body {
     }
 
     .sobre-descricao {
+        order: 4;
         width: 100%;
-        margin-top: 22px;
+        margin-top: 0;
         padding: 0 15px;
     }
 
